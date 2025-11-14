@@ -1,0 +1,133 @@
+# Fichiers à ignorer dans Git pour un projet Data Science
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Modèles entraînés (ne pas versionner les fichiers lourds)
+models/*.pkl
+models/*.h5
+models/*.pt
+models/*.pth
+models/*.ckpt
+
+# Données (ne pas versionner les données sensibles)
+data/raw/*.csv
+data/raw/*.json
+data/raw/*.parquet
+data/processed/*.csv
+data/processed/*.json
+data/processed/*.parquet
+*.csv
+*.xlsx
+*.db
+*.sqlite
+
+# Exceptions : garder les dossiers vides avec .gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!logs/.gitkeep
+
+# MLflow
+mlruns/
+mlflow.db
+
+# DVC
+.dvc/
+*.dvc
+
+# Secrets et configurations sensibles
+.env.local
+.env.production
+credentials.json
+secrets/
+*.pem
+*.key
+
+# Docker
+*.tar
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# OS
+Thumbs.db

@@ -1,0 +1,121 @@
+# Configuration globale du projet Data Science
+# Ce fichier centralise tous les paramètres configurables du projet
+
+# Informations générales du projet
+project:
+  name: "ds_project_template"
+  version: "1.0.0"
+  description: "Template de projet Data Science structuré"
+  author: "Souleymane Sall"
+
+# Configuration des chemins de données
+data:
+  raw_data_path: "data/raw/data.csv"
+  processed_data_path: "data/processed/"
+  train_data_path: "data/train.csv"
+  test_data_path: "data/test.csv"
+
+  # Paramètres de division train/test
+  train_test_split:
+    test_size: 0.2
+    random_state: 42
+    stratify: null  # Nom de la colonne pour stratification (null si pas de stratification)
+
+# Configuration des modèles
+models:
+  output_path: "models/"
+  model_file: "models/model.pkl"
+  preprocessor_file: "models/preprocessor.pkl"
+
+  # Seuil de performance minimum
+  performance_threshold: 0.6
+
+# Configuration du preprocessing
+preprocessing:
+  # Colonnes numériques (à adapter selon votre dataset)
+  numerical_features:
+    - "feature1"
+    - "feature2"
+    - "feature3"
+
+  # Colonnes catégorielles (à adapter selon votre dataset)
+  categorical_features:
+    - "category1"
+    - "category2"
+
+  # Colonne cible
+  target_column: "target"
+
+  # Stratégie d'imputation
+  numerical_imputation: "median"  # Options : mean, median, most_frequent
+  categorical_imputation: "most_frequent"
+
+  # Scaling
+  scaling_method: "standard"  # Options : standard, minmax, robust
+
+# Configuration de l'entraînement
+training:
+  # Validation croisée
+  cross_validation:
+    enabled: true
+    n_splits: 5
+    shuffle: true
+    random_state: 42
+
+  # Algorithmes à tester
+  algorithms:
+    - "Random Forest"
+    - "Gradient Boosting"
+    - "XGBoost"
+    - "Linear Regression"
+
+  # GridSearch
+  grid_search:
+    cv: 3
+    n_jobs: -1
+    verbose: 1
+
+# Configuration de l'évaluation
+evaluation:
+  # Métriques pour la régression
+  regression_metrics:
+    - "R2"
+    - "MSE"
+    - "MAE"
+    - "RMSE"
+
+  # Métriques pour la classification
+  classification_metrics:
+    - "Accuracy"
+    - "Precision"
+    - "Recall"
+    - "F1-Score"
+
+# Configuration des logs
+logging:
+  log_dir: "logs/"
+  log_level: "INFO"  # Options : DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_format: "[%(asctime)s] %(lineno)d %(name)s - %(levelname)s - %(message)s"
+
+# Configuration de l'API (si applicable)
+api:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false
+
+# Configuration MLflow (optionnel)
+mlflow:
+  enabled: false
+  tracking_uri: "http://localhost:5000"
+  experiment_name: "ds_project_experiment"
+
+# Configuration DVC (optionnel)
+dvc:
+  enabled: false
+  remote: "myremote"
+
+# Configuration Docker
+docker:
+  image_name: "ds_project"
+  tag: "latest"
+  port: 5000
